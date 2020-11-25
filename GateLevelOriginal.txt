@@ -1,0 +1,13 @@
+ module Obfuscation(input A,input B,input C,input D,input K1,input K2, input K3,output Y);
+  wire e,f,g,h,i,j,k,l,m,n;
+  nand P(e,A,B);
+  and Q(f,C,D);
+  lock1 R(g,e,K1);
+  lock2 S(h,f,K2);
+  nor T(i,f,C);
+  nor U(l,g,h); 
+  or W(n,B,D);
+  lock3 G(j,n,i,K3);
+  nand V(m,j,l);
+  and X(Y,m,n);
+endmodule
